@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" 
+          src="https://code.jquery.com/jquery-3.5.1.js">
+  </script>
+  
+  <!-- DataTables CSS -->
+  <link rel="stylesheet"
+        href=
+"https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+  
+  <!-- DataTables JS -->
+  <script src=
+"https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js">
+  </script>
+  <style>
+    td{
+     text-align:center;
+    }
+    </style>
+</head>
+<body>
+    <table id="tableID" class="display nowrap">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Team Name</th>
+            <th>Name</th>
+            <th>College Name</th>
+            <th>Score</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in hack %}
+          <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.teamname}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.college_name}}</td>
+            <td>{{i.score}}</td>
+          </tr>
+{% endfor %}
+        </tbody>
+      </table>
+      <script>
+      
+        // Initialize the DataTable
+        $(document).ready(function () {
+          $('#tableID').DataTable({
+      
+            lengthMenu: [10, 20, 30 ],
+              
+            // Set the starting row
+            // of the DataTable
+            displayStart: 0
+          });
+        }); 
+      </script>
+</body>
+</html>

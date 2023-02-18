@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&display=swap");
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: auto;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    min-width: 500px;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Lobster", cursive;
+}
+
+.right {
+    overflow: auto;
+    padding: 30px;
+    background: #f5f5f5;
+    max-height: 550px;
+    border-radius: 6px;
+    box-shadow: 3px 5px 3px 0px #e1e1e1;
+}
+
+.right::-webkit-scrollbar {
+    width: 0em;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+</style>
+
+<body>
+    <div class="parent-container">
+        <div class="container left">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pghdouhq.json" background="transparent"
+                speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            HELLO THERE 👋
+        </div>
+        <div class="container right">
+            <div class="title">Register Here</div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="username"
+                        placeholder="username@123" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email Id</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="email"
+                        placeholder="email123@gmail.com" name="emailid" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="First Name"
+                        placeholder="First Name" required name="fname">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Last Name"
+                        placeholder="last name" required name="lname">
+                </div>
+                <div class="mb-3">
+                    <!-- gender here -->
+                    <label for="exampleInputEmail1" class="form-label">Gender</label>
+                    <select class="form-select" aria-label="Gender" name="gender">
+                        <option value="None">None</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Female">Other</option>
+                        <option value="Female">Prefer not to say</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <!-- DOB here -->
+                    <label for="exampleInputEmail1" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="username"
+                        placeholder="Date of Birth DD-MM-YYYY" required name="dob">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="country"
+                        placeholder="India" required name="country">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">City</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="City"
+                        placeholder="mumbai" required name="city">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">College Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="college"
+                        placeholder="college name" required name="collegename">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">mobile Number</label>
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="username"
+                        placeholder="1234567890" required name="mobileno">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" required name="password1">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                <div class="register-link">
+                    <a href="/login">
+                        already registered?
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/hackethonRegister.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+</head>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&display=swap");
+
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+        background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    }
+
+    .parent-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        min-width: 500px;
+    }
+
+    .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 30px;
+        font-weight: 600;
+        font-family: "Lobster", cursive;
+    }
+
+    .right {
+        overflow: auto;
+        padding: 30px;
+        background: #f5f5f5;
+        max-height: 550px;
+        border-radius: 6px;
+        box-shadow: 3px 5px 3px 0px #e1e1e1;
+    }
+
+    .right::-webkit-scrollbar {
+        width: 0em;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 500;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="parent-container">
+        <div class="container left">
+            <div class="container left">
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_tpa51dr0.json"
+                    background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                    autoplay></lottie-player>
+
+            </div>
+        </div>
+        <div class="container right">
+            <div class="title" style="margin-bottom:20px">Hackathon Register</div>
+            <form method="POST">
+                {% csrf_token %}
+                
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Title of Hackathon</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                        placeholder="Title of Hackathon" name="hack_name">
+                </div>
+             
+                
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Organization Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                        placeholder="Organization Name" name="org_name">
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                        placeholder="Description" rows="4" cols="50" maxlength="200" name="desc_name"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Rules</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                        placeholder="Description" rows="4" cols="50" maxlength="200" name="rules"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Hackathon url</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                        placeholder="Hackethon url" name="h_url">
+                </div>
+        
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Guidelines</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                        placeholder="Guidelines" rows="4" cols="50" maxlength="200" name="guide"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Start Date and Time of Hackathon</label>
+                    <input type="datetime-local" class="form-control" id="exampleInputEmail1" aria-describedby="username"
+                        required name="sdt">
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">End Date and Time of Hackathon</label>
+                    <input type="datetime-local" class="form-control" id="exampleInputEmail1" aria-describedby="username"
+                        required name="edt">
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Minimum Number of Teams</label>
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="username" required
+                        name="min">
+                </div>
+        
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Maximum Number of Teams</label>
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="username" required
+                        name="max">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Domain</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="username" required
+                        name="domain">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Skills</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="username" required
+                        name="skills">
+                </div>
+                <div class="mb-3">
+                    <!-- gender here -->
+                    <label for="exampleInputEmail1" class="form-label">Mode of Hackathon</label>
+                    <select class="form-select" aria-label="mode of hakerathon" id="mode" name="mod_of_ev">
+                        <option value="1">offline</option>
+                        <option value="0">online</option>
+                    </select>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>

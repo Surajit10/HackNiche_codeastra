@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/hackathonView.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        box-sizing: border-box;
+        padding: 10px;
+
+
+    }
+
+    .poster {
+        height: 300px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 20px;
+        margin: auto;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .title {
+        display: flex;
+        font-size: 30px;
+        width: 100%;
+        font-weight: bolder;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    .details {
+        padding-left: 10px;
+        /* margin: auto; */
+        /* position: absolute; */
+        width: 100%;
+        /* bottom: -90px; */
+
+    }
+
+    .parent {
+        width: 90%;
+        max-width: 900px;
+        min-width: 500px;
+        margin: auto;
+        padding: 12px;
+        border-radius: 6px;
+        border: 2px solid #f3f3f3;
+    }
+
+    .description {
+        padding: 20px 10px;
+    }
+
+    .about {
+        margin-top: 10px;
+        padding: 0px 10px;
+        font-weight: 700;
+    }
+
+    .rules {
+        padding: 0px 10px;
+        font-weight: 700;
+    }
+
+    .category {
+        font-size: 13px;
+        background: #d0d0ff;
+        width: fit-content;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .rules-points {
+        padding: 10px 10px;
+    }
+
+    .rules-box {
+        border-radius: 3px;
+        background: #f1f1f1;
+        padding: 10px;
+        margin: 0px 0px 10px;
+    }
+
+    .hackathon-website {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <div class="parent">
+        <div class="poster"
+            style="background-image: url(https://img.freepik.com/free-vector/abstract-gradient-background_530521-1055.jpg?w=996&t=st=1676628063~exp=1676628663~hmac=449fcce…);">
+        </div>
+        <div class="details">
+            <div class="title">
+                {{hk.name_hackathon}} <!-- hackathon title -->
+                <!-- <div class="category">Web Developing</div> -->
+            </div>
+            <div class="timeDate" style="font-size: 14px;">
+                {{hk.start_date_time}} to {{hk.end_date_time}} <!-- hackathon time-data start and end -->
+            </div>
+            <div class="hackathon-website">
+                <a href={{hk.hackathon_url}}>
+                    website <span class="material-symbols-outlined" style="font-size: 13px;font-weight: bold;">
+                        arrow_outward
+                    </span> <!-- hackathon title -->
+                </a>
+            </div>
+
+        </div>
+        <div class="about" style="margin-top: 30px">About Hackerthon</div>
+        <div class="description">
+            {{hk.Description_hack}}
+        </div>
+        <div class="rules-box">
+            <div class="rules">
+                Rules
+            </div>
+            <div class="rules-points">
+                {{hk.rules}}
+            </div>
+        </div>
+        <div class="rules-box">
+            <div class="rules">
+                Guidelines
+            </div>
+            <div class="rules-points">
+                {{hk.Guidelines}}
+            </div>
+        </div>
+        <div>
+            <div class="organization-details">
+                <div class="">
+                    Organized by {{hk.Organization_name}}
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" onclick="location.href = 'parti_register/{{hk.id}}';" class="btn btn-primary">Team Register</button>
+        <button type="submit" onclick="location.href = 'parti_register/{{hk.id}}';" class="btn btn-primary">Join Team</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>
