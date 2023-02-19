@@ -259,9 +259,9 @@ def index(request):
 def admin_index(request):
     if request.session.has_key('username'):
         emailid = request.session['username']
-    print('email',emailid)
+    # print('email',emailid)
     hacki = RegisterHackathon.objects.all()
-    print(emailid)
+    # print(emailid)
     return render(request, "admin_side/admin.html", {'hack':hacki})
 
 def hack_details(request,pk):
@@ -269,6 +269,8 @@ def hack_details(request,pk):
         emailid = request.session['username']
     hacki = ParticipateHackathon.objects.filter(hack_id=pk).order_by('teamname').values()
 
+    # hacki = ParticipateHackathon.objects.group_by('teamname')
+    
 
     print(hacki)
     return render(request, "admin_side/hack-details.html", {'hack':hacki})
